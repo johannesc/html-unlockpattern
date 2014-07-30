@@ -42,11 +42,12 @@ UnlockPattern.prototype.createCanvas = function () {
 };
 
 UnlockPattern.prototype.initSize = function () {
-  var wantedSize = this.convertToPixels(this.node.getAttribute('size'));
+  var wantedSizeX = this.convertToPixels(this.node.getAttribute('width'));
+  var wantedSizeY = this.convertToPixels(this.node.getAttribute('height'));
 
   // Make the circles relative to the available area, use the smallest one
-  var circleRadiousX = wantedSize / this.numX / 2;
-  var circleRadiousY = wantedSize / this.numY / 2;
+  var circleRadiousX = wantedSizeX / this.numX / 2;
+  var circleRadiousY = wantedSizeY / this.numY / 2;
   this.circleRadious = Math.floor(Math.min(circleRadiousX, circleRadiousY));
 
   // Set the size of the canvas based on the rounded numbers
