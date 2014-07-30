@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html>
-<body>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body style="margin:0;padding:0">
   <script src='unlockpatterncanvas.js'></script>
-  <input type='password' name='password' class='unlockpattern'>
+
+  <unlockpattern size='30vmin' submit='submit' style='padding-left: 0;padding-right: 0;margin: auto;display: block;'></unlockpattern>
+
+  <unlockpattern size='70vmin' numx='4' numy='6' submit='submit2' style='padding-left: 0;padding-right: 0;margin: auto;display: block;'></unlockpattern>
+
 <script>
 
-function sendOpen(code) {
-  alert('You entered ' + code);
+function submit(code) {
+  alert('You entered ' + code + ' in first unlock pattern');
+}
+
+function submit2(code) {
+  alert('You entered ' + code + ' in second unlock pattern');
 }
 
 </script>
