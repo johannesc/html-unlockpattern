@@ -153,7 +153,7 @@ UnlockPattern.prototype.touchMove = function (event) {
 
   if (this.mouseIsDown) {
     this.down(touchPos);
-    this.drawBoard(circles);
+    this.drawBoard();
   }
 };
 
