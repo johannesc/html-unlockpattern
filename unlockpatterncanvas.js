@@ -17,7 +17,7 @@ function UnlockPattern(node) {
   this.code = [];
   this.mouseIsDown = false;
   this.currentPoint = null;
-  this.submit = node.getAttribute('submit');
+  this.submit = node.getAttribute('submit') || 'submit';
 
   this.numX = this.parseIntAttribute(node, 'numx', this.DEFAULT_X_POINTS);
   this.numY = this.parseIntAttribute(node, 'numy', this.DEFAULT_Y_POINTS);
@@ -194,7 +194,9 @@ UnlockPattern.prototype.up = function () {
   }
   this.code = [];
   this.drawBoard();
-  window[this.submit](codeString);
+  if (codeString !== '') {
+    window[this.submit](codeString);
+  }
 };
 
 UnlockPattern.prototype.mouseUp = function (event) {
